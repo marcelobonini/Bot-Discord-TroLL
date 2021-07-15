@@ -27,6 +27,10 @@ exports.run = (client, message, args) => {
             value: `Banir o amiguinho`,
             
         },
+        {
+            name: '!play',
+            value: `Iniciar uma musica no canal`
+        }
     )
     message.channel.send(embed);
 }

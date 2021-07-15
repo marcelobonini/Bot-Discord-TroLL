@@ -1,0 +1,7 @@
+comandos para enviar mudanças do VSCODE para a HEROKU
+
+git add --all
+git commit -am "(qualquer coisa)"
+git push heroku master
+
+-agr na heroku em Resources desliga e liga a chave de "worker node index.js"

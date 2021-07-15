@@ -52,4 +52,8 @@ bot.on('ready', () => {
   setInterval(() => setStatus(), 5000)
 })
 
+
+
+
+
 bot.login(config.token);
