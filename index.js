@@ -1,16 +1,21 @@
 const Discord = require("discord.js");
-const config = require("./config.json");
+const config = require("./config.js");
 const bot = new Discord.Client();
 const express = require("express");
+const fs = require("fs");
+const client = new Discord.Client();
 
-const app = express();
-app.get("/", (request, response) => {
-  const ping = new Date();
-  ping.setHours(ping.getHours() - 3);
-  console.log(`Ping recebido às ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`);
-  response.sendStatus(200);
+
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+    bot.on(eventName, event.bind(null, bot));
+  });
 });
-app.listen(process.env.PORT); // Recebe solicitações que o deixa online
+
+bot.commands = new Discord.Collection()
 
 
 //inicio de tudo
@@ -51,7 +56,6 @@ bot.on('ready', () => {
   setStatus("online")
   setInterval(() => setStatus(), 5000)
 })
-
 
 
 
