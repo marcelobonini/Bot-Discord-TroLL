@@ -9,27 +9,37 @@ exports.run = (client, message, args) => {
     .addFields(
         {
             name: '.avatar',
-            value: `Exibir o avatar da pessoa desejada`,
+            value: `".avatar @user"`,
             
         },
         {
             name: '.clear',
-            value: `Limpa o chat de 0 a 99 mensagens`,
+            value: `".clear numero_de_mensagens"`,
             
         },
          {
             name: '.kick',
-            value: `Kickar o amiguinho`,
+            value: `".kick @user"`,
             
         },
         {
             name: '.ban',
-            value: `Banir o amiguinho`,
+            value: `".ban @user motivo"`,
             
         },
         {
-            name: '!play',
-            value: `Iniciar uma musica no canal`
+            name: '.play',
+            value: `".play nome_da_musica`
+        },
+        {
+            name: '.skip',
+            value: `"Pular uma música"`,
+            
+        },
+        {
+            name: '.queue',
+            value: `"Mostrar lista de músicas em reprodução"`,
+            
         }
     )
     message.channel.send(embed);
