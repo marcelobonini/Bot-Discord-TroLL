@@ -55,32 +55,18 @@ bot.on('message', message => {
 });
 
 //status
-bot.on('ready', () => {
-  console.log('Pai ta On!');
-  var tabela = [
-    { name: 'Counter-Strike: Global Offensive', type: 'PLAYING' },
-    
-  ];
-
-  function setStatus() {
-    var altstatus = tabela[Math.floor(Math.random() * tabela.length)]
-    bot.user.setActivity(altstatus)
-  }
-  setStatus("online")
-  setInterval(() => setStatus(), 5000)
-})
-
-
 client.on("ready", () => {
   // Playing in my support server
   client.user.setActivity(`Counter-Strike: Global Offensive`,
    { type: "PLAYING" });
-
+  /* 
   // Listening to xxx users
   client.user.setActivity(
     `MC CHAMPIONS e MC GU - CORSINHA AMARELO`,
     { type: "LISTENING" }
   );
+  */
+  
 });
 
 
