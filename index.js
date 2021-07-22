@@ -70,9 +70,11 @@ bot.on('ready', () => {
   setInterval(() => setStatus(), 5000)
 })
 
+
 client.on("ready", () => {
   // Playing in my support server
-  client.user.setActivity("Counter-Strike: Global Offensive", { type: "PLAYING" });
+  client.user.setActivity(`Counter-Strike: Global Offensive`,
+   { type: "PLAYING" });
 
   // Listening to xxx users
   client.user.setActivity(

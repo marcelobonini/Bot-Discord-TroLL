@@ -8,6 +8,11 @@ exports.run = (client, message, args) => {
     .setFooter(` Autor: ${message.author.username} `)
     .addFields(
         {
+            name: '.ping',
+            value: `"Mostrar ping do bot"`,
+            
+        },
+        {
             name: '.avatar',
             value: `".avatar @user"`,
             
@@ -30,6 +35,16 @@ exports.run = (client, message, args) => {
         {
             name: '.play',
             value: `".play nome_da_musica`
+        },
+        {
+            name: '.pause',
+            value: `"Pausa a música"`,
+            
+        },
+        {
+            name: '.resume',
+            value: `"Volta a tocar a música"`,
+            
         },
         {
             name: '.skip',
